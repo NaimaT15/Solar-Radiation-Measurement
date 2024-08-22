@@ -10,3 +10,4 @@ venv/
 
 # Ignore VSCode settings
 .vscode/
+data
