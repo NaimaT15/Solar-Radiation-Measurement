@@ -8,11 +8,10 @@ st.title('Solar Radiation Data Dashboard')
 st.sidebar.header('User Input Parameters')
 
 # Load Data (you may dynamically fetch or load from a file)
-@st.cache
+@st.cache_data
 def load_data():
     # Example: Load a CSV file
-   return pd.read_csv(r'C:\Users\Naim\solar_radition\data\benin-malanville.csv')
-
+    return pd.read_csv(r'C:\Users\Naim\solar_radition\data\benin-malanville.csv')
 
 data = load_data()
 
@@ -21,8 +20,12 @@ st.sidebar.subheader('Time Period')
 start_date = st.sidebar.date_input('Start date')
 end_date = st.sidebar.date_input('End date')
 
+# Convert start_date and end_date to pandas Timestamp
+start_date = pd.to_datetime(start_date)
+end_date = pd.to_datetime(end_date)
+
 # Filter data based on user input
-filtered_data = data[(data['Timestamp'] >= pd.to_datetime(start_date)) & (data['Timestamp'] <= pd.to_datetime(end_date))]
+filtered_data = data[(pd.to_datetime(data['Timestamp']) >= start_date) & (pd.to_datetime(data['Timestamp']) <= end_date)]
 
 # Example Plot
 st.subheader('GHI Over Time')
