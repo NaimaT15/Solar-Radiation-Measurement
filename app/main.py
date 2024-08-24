@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 st.title('Solar Radiation Data Dashboard')
 st.sidebar.header('User Input Parameters')
 
+# Load Data (you may dynamically fetch or load from a file)
 @st.cache_data
 def load_data():
     # Load CSV files for each region
