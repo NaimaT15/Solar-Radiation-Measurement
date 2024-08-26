@@ -10,9 +10,9 @@ st.sidebar.header('User Input Parameters')
 @st.cache_data
 def load_data():
     # Load CSV files for each region
-    benin = pd.read_csv(r'app\data\benin-malanville.csv')
-    sierraleone = pd.read_csv(r'app\data\sierraleone-bumbuna.csv')
-    togo = pd.read_csv(r'app\data\togo-dapaong_qc.csv')
+    benin = pd.read_csv('app/data/benin-malanville.csv')
+    sierraleone = pd.read_csv('app/data/sierraleone-bumbuna.csv')
+    togo = pd.read_csv('app/data/togo-dapaong_qc.csv')
     
     # Return as a dictionary
     return {'Benin-Malanville': benin, 'Sierraleone-Bumbuna': sierraleone, 'Togo-Malanville': togo}
