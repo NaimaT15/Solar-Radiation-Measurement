@@ -3,11 +3,10 @@ __pycache__/
 *.py[cod]
 
 # Ignore virtual environment
-
+myvenv/
 
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
 # Ignore VSCode settings
 .vscode/
-data
